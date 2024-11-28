@@ -23,7 +23,7 @@ export const TypingEffect = ({ words, speed = 1500 }) => {
 
 export function HeaderSlider() {
   const navigate = useNavigate();
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const scrollToAbout = () => {
     const aboutSection = document.getElementById('about');
@@ -46,6 +46,7 @@ export function HeaderSlider() {
   };
 
   const handleLoginOrAccountClick = () => {
+    alert("Redirecting to the login page...");
     if (isLoggedIn || user) {
       navigate('/account');
     } else {
