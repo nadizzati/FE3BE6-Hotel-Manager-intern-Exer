@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import RoomCardSlider from './RoomCard';
 import { Link, useNavigate } from 'react-router-dom';
 
 const BookingPage = () => {
@@ -24,7 +23,10 @@ const BookingPage = () => {
     };
 
     try {
-      const response = await axios.post('http://your-backend-url/api/bookings', bookingData);
+      // Ganti dengan axios POST request
+      const response = await axios.post('http://localhost:5000/api/bookings', bookingData);
+
+      // Menangani respons sukses
       alert('Booking successful!');
       console.log('Response:', response.data);
 
@@ -33,6 +35,7 @@ const BookingPage = () => {
       setRoomNumber('Room-1');
       setRoomType('single');
     } catch (error) {
+      // Menangani error
       console.error('Error while booking:', error);
       alert('Failed to book. Please try again.');
     } finally {
@@ -60,7 +63,6 @@ const BookingPage = () => {
           K Hotel
         </p>
         <nav className="flex space-x-6">
-          {/* About and Our Team buttons */}
           <Link to="/" className="text-gray-700 hover:bg-slate-500 p-5 hover:text-white font-medium transition-all duration-300">
             About
           </Link>
@@ -83,8 +85,6 @@ const BookingPage = () => {
         </nav>
       </header>
 
-      {/* RoomCard Slider */}
-      <RoomCardSlider />
 
       {/* Booking Form */}
       <div id="booking-form" className="bg-[#EBDFE1] p-8 rounded-lg shadow-lg w-full max-w-md mt-10 flex justify-center">
