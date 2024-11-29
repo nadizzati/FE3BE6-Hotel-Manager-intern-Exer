@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Availability(props) {
+    const navigate = useNavigate();
     const {
         roomTitle,
         roomImage,
@@ -14,23 +16,8 @@ export default function Availability(props) {
 
     const [isHovered, setIsHovered] = useState(false);
 
-    const [currentSlide, setCurrentSlide] = useState(0);
-
-    // Scroll function to the booking form
     const handleBookingClick = () => {
         navigate('/Booking');
-        const bookingForm = document.getElementById("booking-form");
-        if (bookingForm) {
-        bookingForm.scrollIntoView({ behavior: "smooth" });
-      }
-    };
-  
-    const handleNextSlide = () => {
-      setCurrentSlide((prev) => (prev + 1) % roomData.length); // Next Slide
-    };
-  
-    const handlePrevSlide = () => {
-      setCurrentSlide((prev) => (prev - 1 + roomData.length) % roomData.length); // Previous Slide
     };
 
 
@@ -134,7 +121,10 @@ export default function Availability(props) {
                                         <div className="text-gray-500 text-sm text-right">
                                             {price2.total}
                                         </div>
-                                        <button onClick={handleBookingClick} className="mt-2 px-8 py-2 text-white bg-red-300 rounded-lg hover:bg-red-400 hover:scale-105 transition-transform duration-300 shadow-md hover:shadow-lg ml-auto">
+                                        <button 
+                                            onClick={handleBookingClick} 
+                                            className="mt-2 px-8 py-2 text-white bg-red-300 rounded-lg hover:bg-red-400 hover:scale-105 transition-transform duration-300 shadow-md hover:shadow-lg ml-auto"
+                                        >
                                             Reserve
                                         </button>
                                     </div>

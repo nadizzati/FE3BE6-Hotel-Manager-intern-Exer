@@ -2,11 +2,10 @@ import Availability from './Availability';
 
 export default function FullAvailabilities() {
     return(
-
         <div className="flex flex-col py-20 bg-[#B7CEDE]">
             <div className="bg-red-300 text-white p-2 mx-48 font-bold italic text-xl rounded-lg flex items-center justify-center">
                     <p>Select Your Room</p>
-                </div>
+            </div>
             <Availability
                 roomTitle="Single Room"
                 tooltipText="A comfortable room with a single bed, ideal for solo travelers seeking privacy and relaxation during their stay."

@@ -6,6 +6,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { motion } from "framer-motion";
 import { Link, useNavigate } from 'react-router-dom';
+import { img } from "framer-motion/client";
 
 export const TypingEffect = ({ words, speed = 1500 }) => {
   const [index, setIndex] = useState(0);
@@ -23,7 +24,7 @@ export const TypingEffect = ({ words, speed = 1500 }) => {
 
 export function HeaderSlider() {
   const navigate = useNavigate();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn] = useState(false);
 
   const scrollToAbout = () => {
     const aboutSection = document.getElementById('about');
@@ -45,7 +46,7 @@ export function HeaderSlider() {
   };
 
   const handleLoginOrAccountClick = () => {
-    if (isLoggedIn || user) {
+    if (isLoggedIn) {
       navigate('/account');
     } else {
       navigate('/login');
@@ -256,7 +257,7 @@ export function TeamSection() {
 
   const teamMembers1 = [
     { name: "Azra NA", img: " ", role: "Front End" },
-    { name: "Kharisma A", img: " ", role: "Front End" },
+    { name: "Kharisma A", img: "https://hackmd.io/_uploads/ry-xDLvQyg.jpg", role: "Front End" },
     { name: "M. Fattah", img: " ", role: "Front End" },
     { name: "Musyaffa", img: " ", role: "Front End" },
   ];
@@ -286,7 +287,9 @@ export function TeamSection() {
             style={{
               backgroundImage: `url(https://via.placeholder.com/400x300?text=${encodeURIComponent(
                 member.name,
-                member.img
+                <img
+                  src = {member.img}
+                />
               )})`,
             }}
           ></div>

@@ -10,6 +10,7 @@ import Account from './Account'
 import BookingPage from './BookingPage.jsx';
 import FullAvailabilities from './FullAvailabilities.jsx';
 import Login from './Login.jsx';
+import Register from './Register.jsx';
 
 
 createRoot(document.getElementById('root')).render(
@@ -22,6 +23,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/Booking" element={<BookingPage />} />
         <Route path="/FullAvailabilities" element={<FullAvailabilities />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/Register" element={<Register />} />
 
       </Routes>
     </Router>

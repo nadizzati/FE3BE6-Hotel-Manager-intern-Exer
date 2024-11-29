@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import RoomCardSlider from './RoomCard';
 import { Link, useNavigate } from 'react-router-dom';
+import RoomCard from './RoomCard';
 
 const BookingPage = () => {
   const [checkInDate, setCheckInDate] = useState('');
@@ -82,9 +83,6 @@ const BookingPage = () => {
           </button>
         </nav>
       </header>
-
-      {/* RoomCard Slider */}
-      <RoomCardSlider />
 
       {/* Booking Form */}
       <div id="booking-form" className="bg-[#EBDFE1] p-8 rounded-lg shadow-lg w-full max-w-md mt-10 flex justify-center">
