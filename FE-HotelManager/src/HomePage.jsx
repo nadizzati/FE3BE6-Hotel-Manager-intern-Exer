@@ -23,7 +23,7 @@ export const TypingEffect = ({ words, speed = 1500 }) => {
 
 export function HeaderSlider() {
   const navigate = useNavigate();
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const scrollToAbout = () => {
     const aboutSection = document.getElementById('about');
@@ -40,9 +40,8 @@ export function HeaderSlider() {
   };
   
 
-  const handleBookingClick = () => {
-    alert("Redirecting to the booking page...");
-    navigate('/booking');
+  const handleAvailabilitiesClick = () => {
+    navigate('/FullAvailabilities');
   };
 
   const handleLoginOrAccountClick = () => {
@@ -80,7 +79,7 @@ export function HeaderSlider() {
             Our Team
           </button>
           <button
-            onClick={handleBookingClick}
+            onClick={handleAvailabilitiesClick}
             className="text-gray-700 hover:bg-slate-500 p-5 hover:text-white font-medium transition-all duration-300 relative after:content-[''] after:block after:w-0 after:h-[2px] after:bg-pink-500 after:transition-all after:duration-300 hover:after:w-full"
           >
             Book Now
@@ -145,7 +144,7 @@ export function HeaderSlider() {
 
         <div className="absolute bottom-40 left-1/2 bg-rose-200 transform -translate-x-1/2 px-10 py-3 rounded-2xl z-10 hover:scale-110 ease-in-out hover:bg-rose-300 hover:rounded-2xl">
           <button
-            onClick={handleBookingClick}
+            onClick={handleAvailabilitiesClick}
             className="text-gray-700 font-bold text-lg"
           >
             Book Now

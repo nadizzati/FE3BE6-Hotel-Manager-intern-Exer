@@ -8,6 +8,8 @@ import { HeaderSlider, AboutSection, TeamSection } from './HomePage.jsx';
 import { Services } from './Services';
 import Account from './Account'
 import BookingPage from './BookingPage.jsx';
+import FullAvailabilities from './FullAvailabilities.jsx';
+import Login from './Login.jsx';
 
 
 createRoot(document.getElementById('root')).render(
@@ -18,6 +20,9 @@ createRoot(document.getElementById('root')).render(
         <Route path="/services" element={<Services />} />
         <Route path="/Account" element={<Account />} />
         <Route path="/Booking" element={<BookingPage />} />
+        <Route path="/FullAvailabilities" element={<FullAvailabilities />} />
+        <Route path="/login" element={<Login />} />
+
       </Routes>
     </Router>
   </StrictMode>,
